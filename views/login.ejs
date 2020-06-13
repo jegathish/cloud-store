@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+</head>
+<body>
+    <div class="container">
+      <div class="fluid-container">
+        <form action="/login" method="post">
+          <div class="title mt-3 mb-3">
+            <h3>LOGIN |<a href="/register"> REGISTER</a></h3>
+            <hr class="my-4">
+          </div>
+          <div class="error-info">
+            <% if (messages.error) { %>
+              <%= messages.error %>
+            <% } %>
+          </div>
+          <div class="login-data">
+            
+            <!-- email -->
+            <div class="input-group mb-3 email">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+              </div>
+              <input type="email" class="form-control" placeholder="Email" name="email" required>
+            </div>
+            
+            <!-- password -->
+            <div class="input-group mb-3 email Password">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-key" aria-hidden="true"></i>
+              </span>
+            </div>
+            <input type="password" class="form-control" placeholder="Password" name="password" required>
+          </div>
+          
+          <!-- submit -->
+          <div class="submit">
+            <button type="submit" class="btn btn-outline-dark">Login</button>
+          </div>
+  
+          <!-- forgot-password -->
+          <div class="forgot-password">
+            <a href="#">forgot password?</a>
+          </div>
+        </div>
+      </form>
+
+      </div>
+    </div>    
+</body>
