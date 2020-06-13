@@ -6,18 +6,7 @@ var UserSchema = new Schema({
     name: String,
     email: String,
     password: String,
-    mobile: String,
-    date: {
-        date: String,
-        month: String,
-        year: String,
-        day: String,
-        time: {
-          hour : String,
-          minute: String,
-          second: String
-        }
-      }
+    mobile: String
 })
 
 module.exports = mongoose.model('User', UserSchema);
