@@ -4,8 +4,11 @@
 <body>
 
     <div class="container-fluid ">
+      <h2>
+        <div class="name">Hello <%=name%> :)</div>
+      </h2>
         <form action="/logout" method="get">
-            <button class="btn btn-dark">logout</button>
+            <button class="btn btn-dark logout">logout</button>
         </form>     
     </div>
     <div class="container">
@@ -13,10 +16,12 @@
           <div class="col-md-6 m-auto">
             <h1 class="text-center display-4 my-4">Upload File</h1>
             <form action="/upload" method="POST" enctype="multipart/form-data">
-              <div class="custom-file mb-3">
-                <input type="file" name="file" id="file" class="custom-file-input">
-                <label for="file" class="custom-file-label">Choose File</label>
-              </div>
+              
+                <div class="form-group">
+                  <input type="file" class="form-control-file" name="file" id="file" >
+                </div>
+      
+              
               <input type="submit" value="Submit" class="btn btn-primary btn-block">
             </form>
             <hr>
@@ -31,8 +36,9 @@
                         <form method="POST" action="/download/<%= file._id %>">
                             <button class="btn btn-success col-3 btn-block mt-4 ">Download</button>
                         </form>
-                        <form method="POST" action="/share/<%= file._id %>?_method=DELETE">
-                            <button class="btn btn-info col-3 btn-block mt-4">Share</button>
+                        <form method="GET" action="/generatelink/<%= file._id %>?_method=DELETE">
+                            <button class="btn btn-info btn-block mt-4">Generate sharable link</button>
+                            
                         </form>
                         <form method="POST" action="/files/<%= file._id %>?_method=DELETE">
                             <button class="btn btn-danger btn-block mt-4">Delete</button>
